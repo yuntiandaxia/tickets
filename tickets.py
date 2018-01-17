@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: ppy2790
+@author: YTDX
 """
 from splinter.browser import Browser
 from time import sleep
@@ -9,34 +9,34 @@ import time, sys
 
 class huoche(object):
 	"""docstring for huoche"""
-	driver_name=''
+	driver_name    =''
 	executable_path=''
-	#用户名，密码
+	#用户名，密码,必须是自己的用户名和密码
 	username = u"12306用户名"
-	passwd = u"12306密码"
+	passwd   = u"12306密码"
 	# cookies值得自己去找, 下面两个分别是上海, 太原南
-	starts = u"%u4E0A%u6D77%2CSHH"
-	ends = u"%u592A%u539F%2CTYV"
+	starts   = u"%u5E7F%u5DDE%2CGZQ"  #广州
+	ends     = u"%u4E0A%u6D77%2CSHH"  #上海
 	# 时间格式2018-01-19
-	dtime = u"2018-01-19"
+	dtime    = u"2018-01-19"
 	# 车次，选择第几趟，0则从上之下依次点击
-	order = 0
-	###乘客名
-	users = [u"你的名字"]
-	##席位
-	xb = u"二等座"
-	pz=u"成人票"
+	order    = 0
+	###乘客名，必须是自己名字
+	users    = [u"你的名字"]
+	##席位，和票类型
+	xb       = u"二等座"  #u"硬卧"等 
+	pz       = u"成人票"  #
 
 	"""网址"""
 	ticket_url = "https://kyfw.12306.cn/otn/leftTicket/init"
-	login_url = "https://kyfw.12306.cn/otn/login/init"
+	login_url  = "https://kyfw.12306.cn/otn/login/init"
 	initmy_url = "https://kyfw.12306.cn/otn/index/initMy12306"
-	buy="https://kyfw.12306.cn/otn/confirmPassenger/initDc"
-	login_url='https://kyfw.12306.cn/otn/login/init'
+	buy        = "https://kyfw.12306.cn/otn/confirmPassenger/initDc"
+	login_url  = 'https://kyfw.12306.cn/otn/login/init'
 	
 	def __init__(self):
-		self.driver_name='chrome'
-		self.executable_path='/usr/local/bin/chromedriver'
+		self.driver_name     = 'chrome'
+		self.executable_path = '/usr/local/bin/chromedriver'
 
 	def login(self):
 		self.driver.visit(self.login_url)
